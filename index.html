@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michał Dzienisiewicz</title>
+    <style>
+    body {
+    	margin: 0;
+    	padding: 0;
+    	background: #252525;
+    	color: #ffffff;
+    	font-family: Overpass, sans-serif;
+    	font-size: 15px;
+    	line-height: 1.4;
+    }
+
+    a,
+    fieldset,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    input,
+    li,
+    p,
+    ul {
+    	margin: 0;
+    	padding: 0;
+    	font-size: inherit;
+    	font-weight: inherit;
+    	color: inherit;
+    	text-decoration: inherit;
+    	border: none;
+    }
+
+    ul {
+    	list-style: none;
+    }
+
+    .sr-only {
+      display: none;
+    }
+
+    .half {
+      display: block;
+      float: left;
+      width: 50%;
+      height: 100vh;
+      text-align: center;
+      position: relative;
+    }
+
+    .half:before {
+      content: '';
+      display: block;
+      height: 2px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      margin-top: 1px;
+      background: #ffffff;
+    }
+
+    .half--red {
+      background: #a40000;
+      color: #000000;
+    }
+
+    .half--red:before {
+      background: #000000;
+    }
+
+    .half--red:after {
+      content: '';
+      display: block;
+      width: 146px;
+      height: 105px;
+      background: #a40000 url('data:image/png;base64,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') no-repeat center bottom;
+      background-size: contain;
+      position: absolute;
+      bottom: 50%;
+      margin-bottom: -3px;
+      left: 50%;
+      margin-left: -73px;
+    }
+
+    .half__top, .half__bottom {
+      position: absolute;
+      left: 0;
+      right: 0;
+    }
+
+    .half__top {
+      bottom: 50%;
+      padding-bottom: 35px;
+    }
+
+    .half__bottom {
+      top: 50%;
+      padding-top: 35px;
+    }
+
+    .half--red .half__bottom {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .half--grey .half__top {
+      font-size: 22px;
+    }
+
+    .half--grey .half__bottom {
+      font-size: 22px;
+    }
+
+    @media (max-width: 640px) {
+      .half {
+        width: auto;
+        float: none;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <div class="half half--red">
+      <div class="half__bottom">
+        <h1>Michał Dzienisiewicz</h1>
+      </div>
+    </div>
+    <div class="half half--grey">
+      <div class="half__top">
+        front-end web developer
+      </div>
+      <div class="half__bottom">
+<script>document.write(atob('ICAgICAgICA8aDIgY2xhc3M9InNyLW9ubHkiPkNvbnRhY3Q8L2gyPgogICAgICAgIDx1bD4KICAgICAgICAgIDxsaT48YSBocmVmPSImIzEwOTsmIzA5NzsmIzEwNTsmIzEwODsmIzExNjsmIzExMTs6JiMxMDk7JiMxMDU7JiMwOTk7JiMxMDQ7JiMwOTc7JiMxMDg7JiMwNjQ7JiMxMDA7JiMxMjI7JiMxMDU7JiMxMDE7JiMxMTA7JiMxMDU7JiMxMTU7JiMxMDU7JiMxMDE7JiMxMTk7JiMxMDU7JiMwNDY7JiMwOTk7JiMxMjI7Ij4mIzEwOTsmIzEwNTsmIzA5OTsmIzEwNDsmIzA5NzsmIzEwODsmIzA2NDsmIzEwMDsmIzEyMjsmIzEwNTsmIzEwMTsmIzExMDsmIzEwNTsmIzExNTsmIzEwNTsmIzEwMTsmIzExOTsmIzEwNTsmIzA0NjsmIzA5OTsmIzEyMjs8L2E+PC9saT4KICAgICAgICAgIDxsaT48YSBocmVmPSImIzExNjsmIzEwMTsmIzEwODs6KyYjMDUyOyYjMDU2OyYjMDU1OyYjMDU3OyYjMDUwOyYjMDUzOyYjMDU1OyYjMDUxOyYjMDU2OyYjMDUyOyYjMDUyOyI+KyYjMDUyOyYjMDU2OyYjMDMyOyYjMDU1OyYjMDU3OyYjMDUwOyYjMDMyOyYjMDUzOyYjMDU1OyYjMDUxOyYjMDMyOyYjMDU2OyYjMDUyOyYjMDUyOzwvYT48L2xpPgogICAgICAgIDwvdWw+'));</script>
+      </div>
+    </div>
+    <link href="https://fonts.googleapis.com/css?family=Overpass:400,700&amp;subset=latin-ext" rel="stylesheet">
+  </body>
+</html>
